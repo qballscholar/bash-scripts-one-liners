@@ -5,7 +5,7 @@ Shortcuts for terminal speed.
 
 ## Purpose
 
-Terminal shortcuts are powerful productivity tools designed to streamline repetitive commands and accelerate development workflows [^1_1][^1_2]. These shortcuts eliminate the need for constant copy-pasting from documentation and reduce the cognitive load of memorizing complex command sequences.
+Terminal shortcuts are powerful productivity tools designed to streamline repetitive commands and accelerate development workflows. These shortcuts eliminate the need for constant copy-pasting from documentation and reduce the cognitive load of memorizing complex command sequences.
 
 ## Why Use Terminal Shortcuts?
 
