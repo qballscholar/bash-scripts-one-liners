@@ -1,0 +1,24 @@
+# Start simple HTTP server
+alias serve='python3 -m http.server 8000'
+
+# Generate random password
+genpass() { openssl rand -base64 ${1:-12}; }
+
+# JSON pretty print
+alias json='python3 -m json.tool'
+
+# Base64 encode/decode
+alias b64encode='base64'
+alias b64decode='base64 -d'
+
+# URL encode
+urlencode() { python3 -c "import urllib.parse; print(urllib.parse.quote('$1'))"; }
+
+# Check if website is up
+isup() { curl -Is $1 | head -1; }
+
+# Show certificate info
+certinfo() { openssl s_client -connect $1:443 </dev/null 2>/dev/null | openssl x509 -noout -dates; }
+
+# Quick note taking
+note() { echo "$1" >> ~/notes.txt; }

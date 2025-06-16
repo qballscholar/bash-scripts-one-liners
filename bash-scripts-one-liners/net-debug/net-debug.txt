@@ -1,0 +1,26 @@
+# Quick ping test
+alias pg='ping google.com'
+
+# Show external IP
+alias myip='curl -s https://ifconfig.me'
+
+# Show local network info
+alias localip='hostname -I'
+
+# Test if port is open
+testport() { nc -zv $1 $2; }
+
+# Download file quickly
+alias wget='wget -c'
+
+# Speed test
+alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+
+# Show network connections
+alias netcon='ss -tuln'
+
+# Flush DNS (macOS)
+alias flushdns='sudo dscacheutil -flushcache'
+
+# Show routing table
+alias route='netstat -rn'

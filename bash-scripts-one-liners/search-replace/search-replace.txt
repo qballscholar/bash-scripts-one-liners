@@ -1,0 +1,20 @@
+# Find text in files
+findtext() { grep -r "$1" .; }
+
+# Find and count occurrences
+counttext() { grep -r "$1" . | wc -l; }
+
+# Case insensitive search
+findtexti() { grep -ri "$1" .; }
+
+# Search in specific file types
+findpy() { find . -name "*.py" -exec grep -l "$1" {} \;; }
+
+# Replace text in all files
+replaceall() { find . -type f -exec sed -i "s/$1/$2/g" {} +; }
+
+# Search command history
+alias h='history | grep'
+
+# Search processes
+psg() { ps aux | grep $1 | grep -v grep; }

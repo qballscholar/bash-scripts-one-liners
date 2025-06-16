@@ -1,0 +1,26 @@
+# List all resource groups
+alias azrg='az group list -o table'
+
+# List VMs with status
+alias azvm='az vm list -d -o table'
+
+# Get subscription info
+alias azsub='az account show'
+
+# List all locations
+alias azloc='az account list-locations -o table'
+
+# Create resource group quickly
+azrgcreate() { az group create --name $1 --location $2; }
+
+# Delete resource group (be careful!)
+azrgdel() { az group delete --name $1 --yes --no-wait; }
+
+# List storage accounts
+alias azst='az storage account list -o table'
+
+# Get AKS credentials
+azaks() { az aks get-credentials --resource-group $1 --name $2; }
+
+# List app services
+alias azapp='az webapp list -o table'

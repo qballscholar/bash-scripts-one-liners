@@ -1,0 +1,29 @@
+# Monitor file changes
+watch -n 1 'ls -la'
+
+# Show biggest directories
+du -h --max-depth=1 | sort -hr
+
+# Find broken symlinks
+find . -type l ! -exec test -e {} \; -print
+
+# Get weather
+curl wttr.in/YourCity
+
+# Generate QR code
+echo "Your text" | curl -F-=\<- qrenco.de
+
+# Share files instantly
+python3 -m http.server 8000
+
+# Backup with timestamp
+cp file.txt "file-$(date +%Y%m%d_%H%M%S).txt"
+
+# Find largest files in current directory
+find . -type f -printf '%s %p\n' | sort -nr | head -10
+
+# Monitor bandwidth usage
+iftop -i eth0
+
+# Convert video to GIF
+ffmpeg -i input.mp4 -vf "fps=10,scale=320:-1" output.gif

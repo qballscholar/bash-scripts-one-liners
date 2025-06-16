@@ -1,0 +1,44 @@
+# Short kubectl
+alias k='kubectl'
+
+# Get pods with wide output
+alias kgp='kubectl get pods -o wide'
+
+# Get all resources
+alias kga='kubectl get all'
+
+# Describe pod quickly
+alias kdp='kubectl describe pod'
+
+# Get pod logs
+alias klogs='kubectl logs -f'
+
+# Delete pod by name
+alias kdel='kubectl delete pod'
+
+# Get into pod shell
+kexec() { kubectl exec -it $1 -- /bin/bash; }
+
+# Port forward shortcut
+kpf() { kubectl port-forward $1 $2:$2; }
+
+# Get services
+alias kgs='kubectl get svc'
+
+# Apply and show what changed
+alias kapp='kubectl apply -f'
+
+# Get nodes with more info
+alias kgn='kubectl get nodes -o wide'
+
+# Switch namespace quickly
+kns() { kubectl config set-context --current --namespace=$1; }
+
+# Get current context
+alias kctx='kubectl config current-context'
+
+# Top pods (resource usage)
+alias ktop='kubectl top pods'
+
+# Get all pods in all namespaces
+alias kgpall='kubectl get pods --all-namespaces'

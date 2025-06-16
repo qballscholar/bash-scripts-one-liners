@@ -1,0 +1,26 @@
+# List all S3 buckets
+alias s3ls='aws s3 ls'
+
+# Sync folder to S3 (upload)
+s3up() { aws s3 sync $1 s3://$2 --delete; }
+
+# Download from S3
+s3down() { aws s3 sync s3://$1 $2; }
+
+# List EC2 instances with key info
+alias ec2ls='aws ec2 describe-instances --query "Reservations[*].Instances[*].[InstanceId,State.Name,InstanceType,PublicIpAddress]" --output table'
+
+# Get AWS account ID
+alias awsid='aws sts get-caller-identity --query Account --output text'
+
+# List all regions
+alias awsregions='aws ec2 describe-regions --query "Regions[*].RegionName" --output text'
+
+# Quick CloudFormation stack status
+cfstatus() { aws cloudformation describe-stacks --stack-name $1 --query 'Stacks[0].StackStatus' --output text; }
+
+# List Lambda functions
+alias lambdals='aws lambda list-functions --query "Functions[*].[FunctionName,Runtime]" --output table'
+
+# Get RDS instances
+alias rdsls='aws rds describe-db-instances --query "DBInstances[*].[DBInstanceIdentifier,DBInstanceStatus,Engine]" --output table'

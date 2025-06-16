@@ -1,0 +1,29 @@
+# Quick status with colors
+alias gs='git status -s'
+
+# Add everything and commit in one line
+alias gac='git add . && git commit -m'
+
+# Push current branch
+alias gp='git push origin $(git branch --show-current)'
+
+# Pull with rebase (cleaner history)
+alias gpr='git pull --rebase'
+
+# Undo last commit but keep changes
+alias gundo='git reset --soft HEAD~1'
+
+# Show last 10 commits in pretty format
+alias glog='git log --oneline -10 --graph --decorate'
+
+# Delete merged branches
+alias gclean='git branch --merged | grep -v "\*\|main\|master\|develop" | xargs -n 1 git branch -d'
+
+# Quick stash with message
+alias gstash='git stash push -m'
+
+# Show what changed in last commit
+alias gshow='git show --stat'
+
+# Force push safely (checks for updates first)
+alias gpf='git push --force-with-lease'

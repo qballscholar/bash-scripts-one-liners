@@ -1,0 +1,29 @@
+# Stop all containers
+alias dstop='docker stop $(docker ps -q)'
+
+# Remove all containers
+alias drm='docker rm $(docker ps -aq)'
+
+# Remove all images
+alias drmi='docker rmi $(docker images -q)'
+
+# Clean everything (careful with this one!)
+alias dclean='docker system prune -af'
+
+# Get into running container quickly
+alias dexec='docker exec -it'
+
+# Show container logs with follow
+alias dlogs='docker logs -f'
+
+# Quick container stats
+alias dstats='docker stats --no-stream'
+
+# Build and run in one command
+dbr() { docker build -t $1 . && docker run -it $1; }
+
+# Remove dangling images
+alias ddangling='docker rmi $(docker images -f "dangling=true" -q)'
+
+# Quick MySQL container for testing
+alias mysql-test='docker run --rm -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 mysql:8'

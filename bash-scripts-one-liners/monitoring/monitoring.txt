@@ -1,0 +1,35 @@
+# Show disk usage in human format
+alias df='df -h'
+
+# Show directory sizes
+alias du='du -sh *'
+
+# Show memory usage clearly
+alias mem='free -h'
+
+# Show top 10 largest files
+alias big='du -a | sort -nr | head -10'
+
+# Show listening ports
+alias ports='netstat -tuln'
+
+# Show process tree
+alias pstree='ps auxf'
+
+# Kill process by name
+killp() { pkill -f $1; }
+
+# Show CPU info
+alias cpu='lscpu'
+
+# Show system info
+alias sysinfo='uname -a && uptime'
+
+# Monitor log files
+alias tailf='tail -f'
+
+# Show open files by process
+lsofp() { lsof -p $1; }
+
+# Find files larger than size
+findbig() { find . -size +$1 -type f -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'; }
